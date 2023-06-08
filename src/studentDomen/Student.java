@@ -1,0 +1,53 @@
+package studentDomen;
+
+public class Student extends User implements Comparable<Student>{
+    private long studentId;
+    public Student(String firstName, String secondName, int age, String address, long studentId) {
+        super(firstName, secondName, age, address);
+        this.studentId = studentId;
+    }
+
+    public long getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(long studentId) {
+        this.studentId = studentId;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" + "firstname='" + super.getFirstName() + '\'' +
+                "second name='"+super.getSecondName()+
+                ", age=" + super.getAge() +
+                ", address='" + super.getAddress() + '\'' +
+                ", studentId=" + studentId +
+                '}';
+    }
+
+    /**
+     * метод указывает параметры для сортировки при вызове Collections.sort()
+     * сортировка сначала по возрасту, потом по ID
+     * @param o the object to be compared.
+     * @return
+     */
+    @Override
+    public int compareTo(Student o) {
+        System.out.println(super.getFirstName() + o.getFirstName());
+        if (this.getAge()==o.getAge()){
+            if (this.getStudentId()==o.getStudentId()){
+
+                return 0;
+            }
+            if (this.getStudentId()<o.getStudentId()){
+                return -1;
+            }
+            return 1;
+
+        }
+        if (this.getAge()<o.getAge()){
+            return -1;
+        }
+        return 1;
+    }
+}
