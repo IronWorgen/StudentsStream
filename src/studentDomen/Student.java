@@ -1,9 +1,13 @@
 package studentDomen;
 
-public class Student extends User implements Comparable<Student>{
+public class Student extends Person implements Comparable<Student>{
     private long studentId;
     public Student(String firstName, String secondName, int age, String address, long studentId) {
         super(firstName, secondName, age, address);
+        this.studentId = studentId;
+    }
+    public Student(String firstName, String secondName, int age, long studentId) {
+        super(firstName, secondName, age);
         this.studentId = studentId;
     }
 

@@ -1,10 +1,14 @@
 package studentDomen;
 
-public class Emploee extends  User{
+public class Employee extends Person {
     private String special;
-    public Emploee(String firstName, String secondName, int age, String address, String special) {
+    public Employee(String firstName, String secondName, int age, String address, String special) {
         super(firstName, secondName, age, address);
         this.special=special;
+    }
+    public Employee(String firstName, String secondName, int age ) {
+        super(firstName, secondName, age);
+        this.special=null;
     }
 
 
@@ -19,7 +23,7 @@ public class Emploee extends  User{
 
     @Override
     public String toString() {
-        return "Emploee{" +
+        return "Employee{" +
                 "firstname='" + super.getFirstName() + '\'' +
                 "second name='"+super.getSecondName()+
                 ", age=" + super.getAge() +

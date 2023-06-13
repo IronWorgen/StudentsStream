@@ -1,16 +1,22 @@
 package studentDomen;
 
-public class User {
+public class Person {
     private String firstName;
     private String secondName;
     private int age;
     private String address;
 
-    public User(String firstName, String secondName, int age, String address) {
+    public Person(String firstName, String secondName, int age, String address) {
         this.firstName = firstName;
         this.secondName = secondName;
         this.age = age;
         this.address = address;
+    }
+    public Person(String firstName, String secondName, int age) {
+        this.firstName = firstName;
+        this.secondName = secondName;
+        this.age = age;
+        this.address = null;
     }
 
     public String getFirstName() {
